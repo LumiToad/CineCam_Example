@@ -1,0 +1,232 @@
+[gd_scene load_steps=15 format=3 uid="uid://cmbt877qluscr"]
+
+[ext_resource type="Script" path="res://Features/3D/sequence.gd" id="1_u8qq8"]
+
+[sub_resource type="BlendData3D" id="BlendData3D_qvgok"]
+blend_name = "VirtualCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData3D" id="BlendData3D_6phsu"]
+blend_name = "VirtualCam3D blend data"
+blend_by = 1
+blend_by_value = 400.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData3D" id="BlendData3D_jff4m"]
+blend_name = "VirtualCam3D blend data"
+blend_by_value = 4.0
+ease = 1
+trans = 11
+
+[sub_resource type="BoxMesh" id="BoxMesh_4rfh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cwhc"]
+albedo_color = Color(0.0980392, 0.262745, 0.105882, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xcfbd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_07xgr"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fja3q"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd0op"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BlendData3D" id="BlendData3D_mn0hy"]
+blend_name = "CineCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q3324"]
+
+[sub_resource type="Sky" id="Sky_kyt8r"]
+sky_material = SubResource("ProceduralSkyMaterial_q3324")
+
+[sub_resource type="Environment" id="Environment_36gfd"]
+background_mode = 2
+sky = SubResource("Sky_kyt8r")
+
+[node name="Sequence" type="Node3D"]
+script = ExtResource("1_u8qq8")
+
+[node name="CamSequence3D" type="CamSequence3D" parent="."]
+
+[node name="VirtualCam3D_A" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "vcam_a"
+blend_data = SubResource("BlendData3D_qvgok")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66911, 9.28733)
+
+[node name="VirtualCam3D_B" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "vcam_b"
+blend_data = SubResource("BlendData3D_6phsu")
+transform = Transform3D(-0.95649, -0.207127, 0.20549, -0.202506, 0.978314, 0.0435058, -0.210045, -1.09409e-07, -0.977692, 94.1813, 26.9206, -144.286)
+
+[node name="VirtualCam3D_C" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "vcam_c"
+blend_data = SubResource("BlendData3D_jff4m")
+transform = Transform3D(-0.592393, 0, -0.805649, 0, 1, 0, 0.805649, 0, -0.592393, -94.5895, 7, -120.321)
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, 0)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -25.1918)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, 27.3369)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Floor2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, 0)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, 0)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -25.1918)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, 27.3369)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Floor3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, 0)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, 0)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -25.1918)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, 27.3369)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Floor4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, -100)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, -100)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -125.192)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, -72.6631)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Floor5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, -100)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, -100)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -125.192)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, -72.6631)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Floor6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, -100)
+mesh = SubResource("BoxMesh_4rfh0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2cwhc")
+
+[node name="GreenBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, -100)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_07xgr")
+
+[node name="BlueBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -125.192)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fja3q")
+
+[node name="RedBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, -72.6631)
+mesh = SubResource("BoxMesh_xcfbd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd0op")
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 40, 0)
+light_color = Color(0.968627, 0.968627, 0.509804, 1)
+
+[node name="CineCam3D" type="CineCam3D" parent="." node_paths=PackedStringArray("current_sequence")]
+blend_data = SubResource("BlendData3D_mn0hy")
+current_sequence = NodePath("../CamSequence3D")
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 20, 60)
+environment = SubResource("Environment_36gfd")

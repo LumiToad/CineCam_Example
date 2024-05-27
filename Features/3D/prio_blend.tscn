@@ -1,0 +1,262 @@
+[gd_scene load_steps=12 format=3 uid="uid://br3ile6efwa5o"]
+
+[ext_resource type="Script" path="res://Features/3D/prio_blend.gd" id="1_w3mqm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r3e23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w0xv"]
+albedo_color = Color(0.0980392, 0.262745, 0.105882, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vdgmi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6l44w"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ep7l"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijbhb"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BlendData3D" id="BlendData3D_ns4ow"]
+blend_name = "CineCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kcq15"]
+
+[sub_resource type="Sky" id="Sky_uobts"]
+sky_material = SubResource("ProceduralSkyMaterial_kcq15")
+
+[sub_resource type="Environment" id="Environment_ojv1t"]
+background_mode = 2
+sky = SubResource("Sky_uobts")
+
+[node name="PrioBlend" type="Node3D"]
+script = ExtResource("1_w3mqm")
+
+[node name="VirtualCam3D_A" type="VirtualCam3D" parent="."]
+vcam_id = "vcam_a"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66911, 9.28733)
+
+[node name="VirtualCam3D_B" type="VirtualCam3D" parent="."]
+vcam_id = "vcam_b"
+transform = Transform3D(-0.95649, -0.207126, 0.20549, -0.202506, 0.978314, 0.0435059, -0.210045, -3.12992e-09, -0.977692, 94.1813, 26.9206, -144.286)
+
+[node name="VirtualCam3D_C" type="VirtualCam3D" parent="."]
+vcam_id = "vcam_c"
+transform = Transform3D(-0.592393, 0, -0.805649, 0, 1, 0, 0.805649, 0, -0.592393, -94.5895, 7, -120.321)
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, 0)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -25.1918)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, 27.3369)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Floor2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, 0)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, 0)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -25.1918)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, 27.3369)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Floor3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, 0)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, 0)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -25.1918)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, 27.3369)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Floor4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, -100)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, -100)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -125.192)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, -72.6631)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Floor5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, -100)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, -100)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -125.192)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, -72.6631)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Floor6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, -100)
+mesh = SubResource("BoxMesh_r3e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3w0xv")
+
+[node name="GreenBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, -100)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6l44w")
+
+[node name="BlueBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -125.192)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4ep7l")
+
+[node name="RedBlock6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, -72.6631)
+mesh = SubResource("BoxMesh_vdgmi")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ijbhb")
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 40, 0)
+light_color = Color(0.968627, 0.968627, 0.509804, 1)
+
+[node name="CineCam3D" type="CineCam3D" parent="."]
+follow_mode = 3
+blend_data = SubResource("BlendData3D_ns4ow")
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 20, 60)
+environment = SubResource("Environment_ojv1t")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = 280.0
+offset_right = 532.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="A+1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "VCAM_A + 1"
+
+[node name="A_Prio" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="B+1" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "VCAM_B + 1"
+
+[node name="B_Prio" type="Label" parent="HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="C+1" type="Button" parent="HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "VCAM_C + 1"
+
+[node name="C_Prio" type="Label" parent="HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="button_up" from="HBoxContainer/VBoxContainer/A+1" to="." method="_on_a_1_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer2/B+1" to="." method="_on_b_1_button_up"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer3/C+1" to="." method="_on_c_1_button_up"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0w373554sv4r"]
+
+[ext_resource type="Script" path="res://Features/2D/target.gd" id="1_j5cb6"]
+[ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_r0gcf"]
+[ext_resource type="Texture2D" uid="uid://c2orknxcxta6y" path="res://icon.svg" id="2_ws67t"]
+[ext_resource type="Script" path="res://Features/2D/moving_object.gd" id="3_8p7g5"]
+
+[sub_resource type="BlendData2D" id="BlendData2D_7cxfl"]
+blend_name = "CineCam2D blend data"
+blend_by = 1
+blend_by_value = 700.0
+ease = 2
+trans = 7
+
+[node name="Target" type="Node2D"]
+script = ExtResource("1_j5cb6")
+
+[node name="VirtualCam2D" type="VirtualCam2D" parent="."]
+cam2d_process_callback = 0
+
+[node name="PixelLandscape1" type="Sprite2D" parent="."]
+position = Vector2(0, -1.00136e-05)
+scale = Vector2(1, 0.947977)
+texture = ExtResource("1_r0gcf")
+
+[node name="CineCam2D" type="CineCam2D" parent="." node_paths=PackedStringArray("target")]
+follow_mode = 5
+blend_data = SubResource("BlendData2D_7cxfl")
+target = NodePath("../moving_object/CamTarget2D")
+unique_name_in_owner = true
+ignore_rotation = false
+zoom = Vector2(2, 2)
+
+[node name="moving_object" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ws67t")
+script = ExtResource("3_8p7g5")
+
+[node name="CamTarget2D" type="CamTarget2D" parent="moving_object"]
+speed_x = 4.0
+speed_y = 4.0
+unique_name_in_owner = true

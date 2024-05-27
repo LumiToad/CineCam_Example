@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwtbrua4fi51d"]
+
+[ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_aberm"]
+[ext_resource type="Script" path="res://Features/2D/prio_blend.gd" id="1_vrvfx"]
+[ext_resource type="Texture2D" uid="uid://c2orknxcxta6y" path="res://icon.svg" id="3_lui3y"]
+
+[sub_resource type="BlendData2D" id="BlendData2D_rpjcm"]
+blend_name = "VirtualCam2D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData2D" id="BlendData2D_w62ni"]
+blend_name = "VirtualCam2D blend data"
+blend_by = 1
+blend_by_value = 500.0
+ease = 2
+
+[sub_resource type="BlendData2D" id="BlendData2D_swo0r"]
+blend_name = "VirtualCam2D blend data"
+blend_by_value = 3.0
+ease = 2
+trans = 7
+
+[node name="PrioBlend" type="Node2D"]
+script = ExtResource("1_vrvfx")
+
+[node name="PixelLandscape1" type="Sprite2D" parent="."]
+position = Vector2(0, -1.00136e-05)
+scale = Vector2(1, 0.947977)
+texture = ExtResource("1_aberm")
+
+[node name="VirtualCam2D_A" type="VirtualCam2D" parent="."]
+vcam_id = "vcam_a"
+blend_data = SubResource("BlendData2D_rpjcm")
+position = Vector2(300, 0)
+rotation = 0.174533
+
+[node name="Icon" type="Sprite2D" parent="VirtualCam2D_A"]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lui3y")
+
+[node name="Label" type="Label" parent="VirtualCam2D_A"]
+offset_left = -6.26094
+offset_top = 33.5976
+offset_right = 7.73906
+offset_bottom = 56.5976
+text = "A"
+
+[node name="VirtualCam2D_B" type="VirtualCam2D" parent="."]
+vcam_id = "vcam_b"
+blend_data = SubResource("BlendData2D_w62ni")
+cam2d_process_callback = 3681
+position = Vector2(-300, 200)
+rotation = -0.174533
+
+[node name="Icon" type="Sprite2D" parent="VirtualCam2D_B"]
+modulate = Color(0, 0, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lui3y")
+
+[node name="Label" type="Label" parent="VirtualCam2D_B"]
+offset_left = -6.26094
+offset_top = 33.5976
+offset_right = 7.73906
+offset_bottom = 56.5976
+text = "B"
+
+[node name="VirtualCam2D_C" type="VirtualCam2D" parent="."]
+vcam_id = "vcam_c"
+blend_data = SubResource("BlendData2D_swo0r")
+cam2d_process_callback = 3681
+position = Vector2(-400, -200)
+rotation = -0.523599
+
+[node name="Icon" type="Sprite2D" parent="VirtualCam2D_C"]
+modulate = Color(0, 1, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_lui3y")
+
+[node name="Label" type="Label" parent="VirtualCam2D_C"]
+offset_left = -6.26094
+offset_top = 33.5976
+offset_right = 7.73906
+offset_bottom = 56.5976
+text = "C"
+
+[node name="CineCam2D" type="CineCam2D" parent="."]
+follow_mode = 3
+ignore_rotation = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CineCam2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = 280.0
+offset_right = 532.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CineCam2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="A+1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "VCAM_A + 1"
+
+[node name="A_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CineCam2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="B+1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "VCAM_B + 1"
+
+[node name="B_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CineCam2D/HBoxContainer"]
+layout_mode = 2
+
+[node name="C+1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "VCAM_C + 1"
+
+[node name="C_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer/A+1" to="." method="_on_a_1_button_up"]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer2/B+1" to="." method="_on_b_1_button_up"]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer3/C+1" to="." method="_on_c_1_button_up"]

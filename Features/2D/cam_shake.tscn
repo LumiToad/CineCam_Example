@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://co00w4yoohjob"]
+
+[ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_7rmnn"]
+[ext_resource type="Script" path="res://Features/2D/cam_shake.gd" id="2_585vn"]
+
+[node name="CamShake" type="Node2D"]
+script = ExtResource("2_585vn")
+
+[node name="VirtualCam2D" type="VirtualCam2D" parent="."]
+cam2d_process_callback = 11
+
+[node name="PixelLandscape1" type="Sprite2D" parent="."]
+position = Vector2(0, -1.00136e-05)
+scale = Vector2(1, 0.947977)
+texture = ExtResource("1_7rmnn")
+
+[node name="CineCam2D" type="CineCam2D" parent="."]
+ignore_rotation = false
