@@ -1,19 +1,18 @@
-class_name H_BlendData3D
+class_name H_BlendData2D
 extends Resource
 #Inherits: Resource < RefCounted < Object
 #MAIN_DESCRIPTION
-## This help document refers to [BlendData3D] class! [br]
+## This help document refers to [BlendData2D] class! [br]
 ## 
-## Blending data for the [H_CineCam3D] / [H_VirtualCam3D]. [br]
+## Blending data for the [H_CineCam2D] / [H_VirtualCam2D]. [br]
 ##
 ## @tutorial(Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki
-## @tutorial(This page in Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki/BlendData3D-class-reference-%E2%80%90-CineCam-wiki
-## @tutorial(Link3): https://github.com/LumiToad/
+## @tutorial(This page in Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki/BlendData2D-class-reference-%E2%80%90-CineCam-wiki
 #END_OF_DESCRIPTION
 
 
-## Controls how the [member H_BlendData3D.blend_by_value] is being used. [br]
-## You can retrieve the full duration of the blend with [method H_CineCam3D.full_blend_duration]. [br]
+## Controls how the [member H_BlendData2D.blend_by_value] is being used. [br]
+## You can retrieve the full duration of the blend with [method H_CineCam2D.full_blend_duration]. [br]
 enum BlendByType{
 	## The value will be used as time in seconds. [br]
 	DURATION = 0,
@@ -24,16 +23,16 @@ enum BlendByType{
 
 
 ## Getter / Setter for the current blend_by property. [br]
-## See [enum H_BlendData3D.BlendByType] [br]
+## See [enum H_BlendData2D.BlendByType] [br]
 var blend_by : BlendByType = BlendByType.DURATION:
 	get: return get_blend_by()
 	set(value): set_blend_by(value)
 
 
 ## Getter / Setter for the blend by value. [br]
-## This if [member H_BlendData3D.blend_by] is set to [constant H_BlendData3D.DURATION], this will be used as seconds. [br]
-## If set to [constant H_BlendData3D.SPEED], it will be used as a relative speed value. [br]
-## See [enum H_BlendData3D.BlendByType] for more information. [br]
+## This if [member H_BlendData2D.blend_by] is set to [constant H_BlendData2D.DURATION], this will be used as seconds. [br]
+## If set to [constant H_BlendData2D.SPEED], it will be used as a relative speed value. [br]
+## See [enum H_BlendData2D.BlendByType] for more information. [br]
 ## In both cases, these values will be used by an internal tween, so there is no need to delta time them. [br]
 var blend_by_value : float = 0.0:
 	get: return get_blend_by_value()
@@ -41,24 +40,23 @@ var blend_by_value : float = 0.0:
 
 
 ## Getter / Setter for the name of the blend. [br]
-## This is used as an ID for [method H_CineCam3D.find_vcam_by_id]. [br]
+## This is used as an ID for [method H_CineCam2D.find_vcam_by_id]. [br]
 var blend_name : String:
 	get: return get_blend_name()
 	set(value): set_blend_name(value)
 
 
 ## Getter / Setter for blend rotation property. [br]
-## If set to true, the blend will also rotate the [H_CineCam3D]. [br]
-## The rotation will match the X, Y and the inverted Z-Axis of the [H_VirtualCam3D]. [br]
+## If set to true, the blend will also rotate the [H_CineCam2D] to match the rotation of the given [H_VirtualCam2D]. [br]
 var blend_rotation : bool = true:
 	get: return is_blend_rotation()
 	set(value): set_blend_rotation(value)
 
 
 ## Getter / Setter for the optional callable. [br]
-## You can add a [Callable] to the blend_data, which will be called by the [H_CineCam3D], [br]
+## You can add a [Callable] to the blend_data, which will be called by the [H_CineCam2D], [br]
 ## either on the start of the blend of when its complete. [br]
-## See [member H_BlendData3D.on_start] / [member H_BlendData3D.on_complete] for this. [br]
+## See [member H_BlendData2D.on_start] / [member H_BlendData2D.on_complete] for this. [br]
 var callable : Callable:
 	get: return get_callable()
 	set(value): set_callable(value)
@@ -79,14 +77,14 @@ var trans : Tween.TransitionType:
 
 
 ## Getter / Setter for the on start property. [br]
-## If this is set to true, [member H_BlendData3D.callable] will be called on the start of the blend. [br]
+## If this is set to true, [member H_BlendData2D.callable] will be called on the start of the blend. [br]
 var on_start : bool = false:
 	get: return get_callable_on_start()
 	set(value): set_callable_on_start(value)
 
 
 ## Getter / Setter for the on complete property. [br]
-## If this is set to true, [member H_BlendData3D.callable] will be called when the blend is complete. [br]
+## If this is set to true, [member H_BlendData2D.callable] will be called when the blend is complete. [br]
 var on_complete : bool = false:
 	get: return get_callable_on_complete()
 	set(value): set_callable_on_complete(value)

@@ -1,16 +1,16 @@
-class_name H_CamTarget3D
-extends Node3D
-#Inherits: Node3D < Node < Object
+class_name H_CamTarget2D
+extends Node2D
+#Inherits: Node2D < CanvasItem < Node < Object
 #MAIN_DESCRIPTION
-## This help document refers to [CamTarget3D] class! [br]
+## This help document refers to [CamTarget2D] class! [br]
 ## 
-## A Target for the [H_CineCam3D]. [br]
-## This node is used as a "carrot on a stick" for a [H_CineCam3D]. [br]
-## See [member H_CineCam3D.target], [member H_CineCam3D.look_at_target] and [enum H_CineCam3D.FollowMode] for more infos. [br]
+## A Target for the [H_CineCam2D]. [br]
+## This node is used as a "carrot on a stick" for a [H_CineCam2D]. [br]
+## See [member H_CineCam2D.target] and [enum H_CineCam2D.FollowMode] for more infos. [br]
 ##
 ## @tutorial(Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki
-## @tutorial(This page in Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki/CamTarget3D-class-reference-%E2%80%90-CineCam-wiki
-## @tutorial(Link3): https://github.com/LumiToad
+## @tutorial(This page in Wiki on GitHub): https://github.com/LumiToad/GDExtension_CineCam/wiki/CamTarget2D-class-reference-%E2%80%90-CineCam-wiki
+## @tutorial(Following a target): https://github.com/LumiToad/GDExtension_CineCam/wiki/Feature-%E2%80%90-Following-a-target
 #END_OF_DESCRIPTION
 
 ## Getter / Setter for the ease type of the blend. [br]
@@ -28,41 +28,33 @@ var trans : Tween.TransitionType:
 
 
 ## Getter / Setter for the target offset. [br]
-## If a [H_CineCam3D] is following this target, it will add this offest to the equation. [br]
+## If a [H_CineCam2D] is following this target, it will add this offest to the equation. [br]
 ## Example: Useful if you want to pan the camera upwards, when a character looks up or down, like in some platformers. [br]
-var offset : Vector3 = Vector3():
+var offset : Vector2 = Vector2():
 	get: return get_target_offset()
 	set(value): set_target_offset(value)
 
 
-## Getter / setter for the X-Axis follow speed. [br]
-## X-Axis blend speed, if a [H_CineCam3D] is following or looking at this target, using [constant H_CineCam3D.TARGET_BLEND]. [br]
+## Getter / setter for the horizontal follow speed. [br]
+## Horizontal blend speed, if a [H_CineCam2D] is following this target, using [constant H_CineCam2D.TARGET_BLEND]. [br]
 ## This is set in percentage from 0.0% to 100.0%. Cannot exceed this limit! [br]
 var speed_x : float = 0.0:
 	get: return get_speed_x()
 	set(value): set_speed_x(value)
 
 
-## Getter / setter for the Y_Axis speed. [br]
-## Y_Axis blend speed, if a [H_CineCam3D] is following or looking at this target, using [constant H_CineCam3D.TARGET_BLEND]. [br]
+## Getter / setter for the vertical follow speed. [br]
+## Vertical blend speed, if a [H_CineCam2D] is following this target, using [constant H_CineCam2D.TARGET_BLEND]. [br]
 ## This is set in percentage from 0.0% to 100.0%. Cannot exceed this limit! [br]
 var speed_y : float = 0.0:
 	get: return get_speed_y()
 	set(value): set_speed_y(value)
 
 
-## Getter / setter for the Z_Axis follow speed. [br]
-## Z_Axis blend speed, if a [H_CineCam3D] is following or looking at this target, using [constant H_CineCam3D.TARGET_BLEND]. [br]
-## This is set in percentage from 0.0% to 100.0%. Cannot exceed this limit! [br]
-var speed_z : float = 0.0:
-	get: return get_speed_z()
-	set(value): set_speed_z(value)
-
-
-## Returns speed_x, speed_y and speed_z as a Vector3, but scaled down to represent the actual blending speed. [br]
+## Returns speed_x and speed_y as a Vector2, but scaled down to represent the actual blending speed. [br]
 ## From 0.00 to 1.00
-func scaled_speed() -> Vector3:
-	return Vector3()
+func scaled_speed() -> Vector2:
+	return Vector2()
 
 
 ## Getter for ease. [br]
@@ -86,12 +78,12 @@ func set_trans(trans : Tween.TransitionType):
 
 
 ## Getter for offset. [br]
-func get_target_offset() -> Vector3:
-	return Vector3()
+func get_target_offset() -> Vector2:
+	return Vector2()
 
 
 ## Setter for offset. [br]
-func set_target_offset(value : Vector3):
+func set_target_offset(value : Vector2):
 	pass
 
 
@@ -112,14 +104,4 @@ func get_speed_y() -> float:
 
 ## Setter for speed_y. [br]
 func set_speed_y(value : float):
-	pass
-
-
-## Getter for speed_z. [br]
-func get_speed_z() -> float:
-	return 0.0
-
-
-## Setter for speed_z. [br]
-func set_speed_z(value : float):
 	pass
