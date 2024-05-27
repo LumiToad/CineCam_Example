@@ -11,3 +11,4 @@ func _input(event):
 		cinecam.start_sequence(false)
 	if event.is_action_released("ui_left"):
 		cinecam.start_sequence(true)
+
