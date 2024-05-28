@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cmbt877qluscr"]
 
-[ext_resource type="Script" path="res://Features/3D/sequence.gd" id="1_u8qq8"]
+[ext_resource type="Script" path="res://features/3D/sequence.gd" id="1_u8qq8"]
 
 [sub_resource type="BlendData3D" id="BlendData3D_qvgok"]
 blend_name = "VirtualCam3D blend data"
@@ -230,3 +230,10 @@ current_sequence = NodePath("../CamSequence3D")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 20, 60)
 environment = SubResource("Environment_36gfd")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 573.0
+offset_bottom = 23.0
+scale = Vector2(2, 2)
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,39 +1,39 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca2ysk7bo8caf"]
+[gd_scene load_steps=12 format=3 uid="uid://b8wws101j3sem"]
 
-[ext_resource type="Script" path="res://features/3D/player.gd" id="1_511lr"]
+[ext_resource type="Script" path="res://features/3D/player.gd" id="1_80yga"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_muisq"]
+[sub_resource type="BoxMesh" id="BoxMesh_psadv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rir8j"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcpm1"]
 albedo_color = Color(0.0980392, 0.262745, 0.105882, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_e08sc"]
+[sub_resource type="BoxMesh" id="BoxMesh_lwr1s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ackg3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iumlc"]
 albedo_color = Color(0, 1, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2q7d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbqqq"]
 albedo_color = Color(0, 0, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm372"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjlob"]
 albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="BlendData3D" id="BlendData3D_oj2pj"]
+[sub_resource type="BlendData3D" id="BlendData3D_e2hwj"]
 blend_name = "CineCam3D blend data"
 blend_by_value = 2.0
 ease = 2
 trans = 7
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgfvf"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ulagi"]
 
-[sub_resource type="Sky" id="Sky_h551w"]
-sky_material = SubResource("ProceduralSkyMaterial_rgfvf")
+[sub_resource type="Sky" id="Sky_8sqja"]
+sky_material = SubResource("ProceduralSkyMaterial_ulagi")
 
-[sub_resource type="Environment" id="Environment_122lv"]
+[sub_resource type="Environment" id="Environment_j0vlq"]
 background_mode = 2
-sky = SubResource("Sky_h551w")
+sky = SubResource("Sky_8sqja")
 
-[node name="Target" type="Node3D"]
+[node name="LookAt" type="Node3D"]
 
 [node name="VirtualCam3D" type="VirtualCam3D" parent="."]
 
@@ -41,147 +41,147 @@ sky = SubResource("Sky_h551w")
 
 [node name="Floor" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, 0)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -25.1918)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, 27.3369)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Floor2" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, 0)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock2" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, 0)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock2" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -25.1918)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock2" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, 27.3369)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Floor3" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, 0)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock3" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, 0)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock3" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -25.1918)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock3" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, 27.3369)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Floor4" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, -100)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock4" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.8685, 6, -100)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock4" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 26.9194, 6, -125.192)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock4" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.6839, 6, -72.6631)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Floor5" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -100, 0, -100)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock5" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -133.868, 6, -100)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock5" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -73.0806, 6, -125.192)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock5" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -82.3161, 6, -72.6631)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Floor6" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 100, 0, -100)
-mesh = SubResource("BoxMesh_muisq")
+mesh = SubResource("BoxMesh_psadv")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rir8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcpm1")
 
 [node name="GreenBlock6" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1315, 6, -100)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ackg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_iumlc")
 
 [node name="BlueBlock6" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 126.919, 6, -125.192)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock6" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 117.684, 6, -72.6631)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="Light" type="Node3D" parent="."]
 
@@ -189,31 +189,36 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 40, 0)
 light_color = Color(0.968627, 0.968627, 0.509804, 1)
 
-[node name="CineCam3D" type="CineCam3D" parent="." node_paths=PackedStringArray("target")]
-follow_mode = 5
-blend_data = SubResource("BlendData3D_oj2pj")
-target = NodePath("../Player/CamTarget3D")
+[node name="CineCam3D" type="CineCam3D" parent="." node_paths=PackedStringArray("look_at_target")]
+blend_data = SubResource("BlendData3D_e2hwj")
+look_at_target = NodePath("../Player/CamTarget3D")
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0.173648, -0.984808, 0, 0.984808, 0.173648, 1, 7.5904e-09, -4.30473e-08, -30, 5, 0)
-environment = SubResource("Environment_122lv")
+transform = Transform3D(-4.37114e-08, 0.173648, -0.984808, 0, 0.984808, 0.173648, 1, 7.59039e-09, -4.30473e-08, -40, 25, 0)
+environment = SubResource("Environment_j0vlq")
 
 [node name="Player" type="Node3D" parent="."]
-script = ExtResource("1_511lr")
+script = ExtResource("1_80yga")
 
 [node name="BlueBlock" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 16, 1.76007)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_t2q7d")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbqqq")
 
 [node name="RedBlock" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 6, 0)
-mesh = SubResource("BoxMesh_e08sc")
+mesh = SubResource("BoxMesh_lwr1s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_hm372")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjlob")
 
 [node name="CamTarget3D" type="CamTarget3D" parent="Player"]
 offset = Vector3(0, 20, 10)
 speed_x = 5.0
 speed_y = 100.0
 speed_z = 5.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Arrow Keys for movement
+Left, Right, Up"

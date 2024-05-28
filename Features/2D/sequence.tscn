@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bt6a3aexxt5j1"]
 
-[ext_resource type="Script" path="res://Features/2D/sequence.gd" id="1_hxkup"]
+[ext_resource type="Script" path="res://features/2D/sequence.gd" id="1_hxkup"]
 [ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="2_nna7t"]
 [ext_resource type="Texture2D" uid="uid://c2orknxcxta6y" path="res://icon.svg" id="3_mpmya"]
 
@@ -10,6 +10,7 @@ blend_by = 1
 blend_by_value = 700.0
 ease = 2
 trans = 7
+blend_rotation = false
 
 [node name="Sequence" type="Node2D"]
 script = ExtResource("1_hxkup")
@@ -18,6 +19,7 @@ script = ExtResource("1_hxkup")
 position = Vector2(0, -1.00136e-05)
 scale = Vector2(1, 0.947977)
 texture = ExtResource("2_nna7t")
+metadata/_edit_lock_ = true
 
 [node name="CamSequence2D" type="CamSequence2D" parent="."]
 _draw_debug_lines = true
@@ -26,7 +28,6 @@ _debug_lines_width = 10.0
 
 [node name="VirtualCam2D_A" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_a"
-cam2d_process_callback = 0
 position = Vector2(300, 0)
 rotation = 0.174533
 
@@ -34,6 +35,7 @@ rotation = 0.174533
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_mpmya")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="CamSequence2D/VirtualCam2D_A"]
 offset_left = -6.26094
@@ -42,10 +44,10 @@ offset_right = 7.73906
 offset_bottom = 56.5976
 text = "A"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="VirtualCam2D_B" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_b"
-cam2d_process_callback = 0
 position = Vector2(-300, 200)
 rotation = -0.174533
 
@@ -53,6 +55,7 @@ rotation = -0.174533
 modulate = Color(0, 0, 1, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_mpmya")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="CamSequence2D/VirtualCam2D_B"]
 offset_left = -6.26094
@@ -61,10 +64,10 @@ offset_right = 7.73906
 offset_bottom = 56.5976
 text = "B"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="VirtualCam2D_C" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_c"
-cam2d_process_callback = 0
 position = Vector2(-400, -200)
 rotation = -0.523599
 
@@ -72,6 +75,7 @@ rotation = -0.523599
 modulate = Color(0, 1, 0, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_mpmya")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="CamSequence2D/VirtualCam2D_C"]
 offset_left = -6.26094
@@ -80,8 +84,18 @@ offset_right = 7.73906
 offset_bottom = 56.5976
 text = "C"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="CineCam2D" type="CineCam2D" parent="." node_paths=PackedStringArray("current_sequence")]
 blend_data = SubResource("BlendData2D_ioud1")
 current_sequence = NodePath("../CamSequence2D")
 ignore_rotation = false
+
+[node name="Label" type="Label" parent="CineCam2D"]
+offset_left = -576.0
+offset_top = -320.0
+offset_right = -4.0
+offset_bottom = -297.0
+scale = Vector2(2, 2)
+horizontal_alignment = 1
+vertical_alignment = 1

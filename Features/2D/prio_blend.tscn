@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwtbrua4fi51d"]
 
 [ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_aberm"]
-[ext_resource type="Script" path="res://Features/2D/prio_blend.gd" id="1_vrvfx"]
+[ext_resource type="Script" path="res://features/2D/prio_blend.gd" id="1_vrvfx"]
 [ext_resource type="Texture2D" uid="uid://c2orknxcxta6y" path="res://icon.svg" id="3_lui3y"]
 
 [sub_resource type="BlendData2D" id="BlendData2D_rpjcm"]
@@ -51,7 +51,6 @@ text = "A"
 [node name="VirtualCam2D_B" type="VirtualCam2D" parent="."]
 vcam_id = "vcam_b"
 blend_data = SubResource("BlendData2D_w62ni")
-cam2d_process_callback = 3681
 position = Vector2(-300, 200)
 rotation = -0.174533
 
@@ -70,7 +69,7 @@ text = "B"
 [node name="VirtualCam2D_C" type="VirtualCam2D" parent="."]
 vcam_id = "vcam_c"
 blend_data = SubResource("BlendData2D_swo0r")
-cam2d_process_callback = 3681
+cam2d_process_callback = -1198645059
 position = Vector2(-400, -200)
 rotation = -0.523599
 
@@ -97,9 +96,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 230.0
-offset_top = 280.0
+offset_top = 225.0
 offset_right = 532.0
-offset_bottom = 311.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -109,6 +108,10 @@ layout_mode = 2
 [node name="A+1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "VCAM_A + 1"
+
+[node name="A-1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "VCAM_A - 1"
 
 [node name="A_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -121,6 +124,10 @@ layout_mode = 2
 layout_mode = 2
 text = "VCAM_B + 1"
 
+[node name="B-1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "VCAM_B - 1"
+
 [node name="B_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -132,10 +139,17 @@ layout_mode = 2
 layout_mode = 2
 text = "VCAM_C + 1"
 
+[node name="C-1" type="Button" parent="CineCam2D/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "VCAM_C - 1"
+
 [node name="C_Prio" type="Label" parent="CineCam2D/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer/A+1" to="." method="_on_a_1_button_up"]
-[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer2/B+1" to="." method="_on_b_1_button_up"]
-[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer3/C+1" to="." method="_on_c_1_button_up"]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer/A+1" to="." method="_on_a_1_button_up" binds= [1]]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer/A-1" to="." method="_on_a_1_button_up" binds= [-1]]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer2/B+1" to="." method="_on_b_1_button_up" binds= [1]]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer2/B-1" to="." method="_on_b_1_button_up" binds= [-1]]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer3/C+1" to="." method="_on_c_1_button_up" binds= [1]]
+[connection signal="button_up" from="CineCam2D/HBoxContainer/VBoxContainer3/C-1" to="." method="_on_c_1_button_up" binds= [-1]]

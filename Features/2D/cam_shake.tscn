@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co00w4yoohjob"]
 
 [ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_7rmnn"]
-[ext_resource type="Script" path="res://Features/2D/cam_shake.gd" id="2_585vn"]
+[ext_resource type="Script" path="res://features/2D/cam_shake.gd" id="2_585vn"]
 
 [node name="CamShake" type="Node2D"]
 script = ExtResource("2_585vn")
@@ -16,3 +16,17 @@ texture = ExtResource("1_7rmnn")
 
 [node name="CineCam2D" type="CineCam2D" parent="."]
 ignore_rotation = false
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -328.0
+offset_right = -118.0
+offset_bottom = -305.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+horizontal_alignment = 1
+vertical_alignment = 1

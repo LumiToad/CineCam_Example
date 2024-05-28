@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0w373554sv4r"]
 
-[ext_resource type="Script" path="res://Features/2D/target.gd" id="1_j5cb6"]
+[ext_resource type="Script" path="res://features/2D/target.gd" id="1_j5cb6"]
 [ext_resource type="Texture2D" uid="uid://by5g2vwl3yn15" path="res://assets/2D/pixel_landscape_1.png" id="1_r0gcf"]
 [ext_resource type="Texture2D" uid="uid://c2orknxcxta6y" path="res://icon.svg" id="2_ws67t"]
-[ext_resource type="Script" path="res://Features/2D/moving_object.gd" id="3_8p7g5"]
+[ext_resource type="Script" path="res://features/2D/moving_object.gd" id="3_8p7g5"]
 
 [sub_resource type="BlendData2D" id="BlendData2D_7cxfl"]
 blend_name = "CineCam2D blend data"
@@ -16,7 +16,6 @@ trans = 7
 script = ExtResource("1_j5cb6")
 
 [node name="VirtualCam2D" type="VirtualCam2D" parent="."]
-cam2d_process_callback = 0
 
 [node name="PixelLandscape1" type="Sprite2D" parent="."]
 position = Vector2(0, -1.00136e-05)
