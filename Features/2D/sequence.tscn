@@ -28,6 +28,7 @@ _debug_lines_width = 10.0
 
 [node name="VirtualCam2D_A" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_a"
+cam2d_process_callback = 3
 position = Vector2(300, 0)
 rotation = 0.174533
 
@@ -48,6 +49,7 @@ metadata/_edit_lock_ = true
 
 [node name="VirtualCam2D_B" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_b"
+cam2d_process_callback = 10
 position = Vector2(-300, 200)
 rotation = -0.174533
 
@@ -68,6 +70,7 @@ metadata/_edit_lock_ = true
 
 [node name="VirtualCam2D_C" type="VirtualCam2D" parent="CamSequence2D"]
 vcam_id = "vcam_c"
+cam2d_process_callback = 10
 position = Vector2(-400, -200)
 rotation = -0.523599
 

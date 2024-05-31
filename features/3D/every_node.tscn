@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7mkgnfvgs7i5"]
+
+[sub_resource type="BlendData3D" id="BlendData3D_utdwf"]
+blend_name = "VirtualCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData3D" id="BlendData3D_5fytf"]
+blend_name = "VirtualCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData3D" id="BlendData3D_hk4xk"]
+blend_name = "VirtualCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[sub_resource type="BlendData3D" id="BlendData3D_bowgx"]
+blend_name = "CineCam3D blend data"
+blend_by_value = 2.0
+ease = 2
+trans = 7
+
+[node name="EveryNode" type="Node3D"]
+
+[node name="CamSequence3D" type="CamSequence3D" parent="."]
+
+[node name="VirtualCam3D_A" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "Some_VCAM_A"
+priority = 5
+blend_data = SubResource("BlendData3D_utdwf")
+
+[node name="VirtualCam3D_B" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "Some_VCAM_B"
+priority = 10
+blend_data = SubResource("BlendData3D_5fytf")
+
+[node name="VirtualCam3D_C" type="VirtualCam3D" parent="CamSequence3D"]
+vcam_id = "Some_VCAM_C"
+priority = 15
+blend_data = SubResource("BlendData3D_hk4xk")
+
+[node name="CamTarget3D" type="CamTarget3D" parent="."]
+offset = Vector3(7.5, 10, 3.25)
+speed_y = 100.0
+speed_z = 55.55
+
+[node name="CineCam3D" type="CineCam3D" parent="." node_paths=PackedStringArray("current_sequence", "target", "look_at_target")]
+follow_mode = 1
+blend_data = SubResource("BlendData3D_bowgx")
+current_sequence = NodePath("../CamSequence3D")
+target = NodePath("../CamTarget3D")
+look_at_target = NodePath("../CamTarget3D")

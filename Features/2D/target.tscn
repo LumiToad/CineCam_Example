@@ -16,6 +16,7 @@ trans = 7
 script = ExtResource("1_j5cb6")
 
 [node name="VirtualCam2D" type="VirtualCam2D" parent="."]
+cam2d_process_callback = -464269229
 
 [node name="PixelLandscape1" type="Sprite2D" parent="."]
 position = Vector2(0, -1.00136e-05)

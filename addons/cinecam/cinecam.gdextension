@@ -1,16 +1,16 @@
 [configuration]
 entry_symbol = "cinecam_init"
-compatibility_minimum = "4.1"
+compatibility_minimum = "4.2"
 
 [libraries]
 windows.debug.x86_32 = "res://addons/cinecam/win32/libcinecam.windows.template_debug.x86_32.dll"
 windows.debug.x86_64 = "res://addons/cinecam/win64/libcinecam.windows.template_debug.x86_64.dll"
-windows.release.x86_32 = "windows/libcinecam.windows.template_template_release.x86_32.dll"
-windows.release.x86_64 = "windows/libcinecam.windows.template_template_release.x86_64.dll"
-linux.debug.x86_32 = "res://addons/cine_cam/linux/libcinecam.linux.template_debug.x86_32.so"
-linux.debug.x86_64 = "res://addons/cine_cam/linux/libcinecam.linux.template_debug.x86_64.so"
-linux.release.x86_32 = "res://addons/cine_cam/linux/libcinecam.linux.template_release.x86_32.so"
-linux.release.x86_64 = "res://addons/cine_cam/linux/libcinecam.linux.template_release.x86_64.so"
+windows.release.x86_32 = "res://addons/cinecam/win32/libcinecam.windows.template_release.x86_32.dll"
+windows.release.x86_64 = "res://addons/cinecam/win64/libcinecam.windows.template_release.x86_64.dll"
+linux.debug.x86_32 = "res://addons/cinecam/linux32/libcinecam.linux.template_debug.x86_32.so"
+linux.debug.x86_64 = "res://addons/cinecam/linux64/libcinecam.linux.template_debug.x86_64.so"
+linux.release.x86_32 = "res://addons/cinecam/linux32/libcinecam.linux.template_release.x86_32.so"
+linux.release.x86_64 = "res://addons/cinecam/linux64/libcinecam.linux.template_release.x86_64.so"
 
 [icons]
 CineCam2D = "res://addons/cinecam/icons/CineCam2D.svg"

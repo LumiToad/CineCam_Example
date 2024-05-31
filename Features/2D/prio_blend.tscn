@@ -33,6 +33,7 @@ texture = ExtResource("1_aberm")
 [node name="VirtualCam2D_A" type="VirtualCam2D" parent="."]
 vcam_id = "vcam_a"
 blend_data = SubResource("BlendData2D_rpjcm")
+cam2d_process_callback = 0
 position = Vector2(300, 0)
 rotation = 0.174533
 
@@ -51,6 +52,7 @@ text = "A"
 [node name="VirtualCam2D_B" type="VirtualCam2D" parent="."]
 vcam_id = "vcam_b"
 blend_data = SubResource("BlendData2D_w62ni")
+cam2d_process_callback = 0
 position = Vector2(-300, 200)
 rotation = -0.174533
 
