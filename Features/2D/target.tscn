@@ -15,9 +15,6 @@ trans = 7
 [node name="Target" type="Node2D"]
 script = ExtResource("1_j5cb6")
 
-[node name="VirtualCam2D" type="VirtualCam2D" parent="."]
-cam2d_process_callback = -464269229
-
 [node name="PixelLandscape1" type="Sprite2D" parent="."]
 position = Vector2(0, -1.00136e-05)
 scale = Vector2(1, 0.947977)
@@ -30,6 +27,15 @@ target = NodePath("../moving_object/CamTarget2D")
 unique_name_in_owner = true
 ignore_rotation = false
 zoom = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="CineCam2D"]
+offset_left = -280.0
+offset_top = -160.0
+offset_right = -78.0
+offset_bottom = -111.0
+theme_override_font_sizes/font_size = 11
+text = "Arrow Keys for movement
+Up, Down, Left, Right"
 
 [node name="moving_object" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

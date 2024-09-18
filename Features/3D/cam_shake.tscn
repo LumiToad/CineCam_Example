@@ -30,8 +30,6 @@ sky = SubResource("Sky_m10ur")
 [node name="CamShake" type="Node3D"]
 script = ExtResource("1_il8kv")
 
-[node name="VirtualCam3D" type="VirtualCam3D" parent="."]
-
 [node name="Geometry" type="Node3D" parent="."]
 
 [node name="Floor" type="MeshInstance3D" parent="Geometry"]

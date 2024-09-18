@@ -35,8 +35,6 @@ sky = SubResource("Sky_h551w")
 
 [node name="Target" type="Node3D"]
 
-[node name="VirtualCam3D" type="VirtualCam3D" parent="."]
-
 [node name="Geometry" type="Node3D" parent="."]
 
 [node name="Floor" type="MeshInstance3D" parent="Geometry"]
@@ -217,3 +215,9 @@ offset = Vector3(0, 20, 10)
 speed_x = 5.0
 speed_y = 100.0
 speed_z = 5.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Arrow Keys for movement
+Left, Right, Up"
